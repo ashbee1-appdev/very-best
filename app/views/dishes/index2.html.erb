@@ -1,0 +1,1268 @@
+
+
+
+  
+<body>
+
+
+  <div class="container mt-4">
+
+
+    <div class="row mt-2 mb-1">
+  <div class="col-md-3">
+    <form class="collapse" id="dishes_filters" action="/dishes" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+      <p class="lead">Narrow results:</p>
+
+      <div class="form-group">
+        <label for="q_name_cont">Name contains</label>
+        <input class="form-control" placeholder="Name contains" type="text" name="q[name_cont]" id="q_name_cont" />
+      </div>
+
+      <div class="form-group">
+        <label for="q_cuisine_id_eq_any">Cuisine</label>
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="16129" />
+              American
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="16128" />
+              Breakfast
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="16135" />
+              Classic
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="16134" />
+              Dessert
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="16130" />
+              Drink
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="16133" />
+              French
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="16138" />
+              Indian
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="16131" />
+              Italian
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="16136" />
+              Japanese
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="16132" />
+              Salad
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="16137" />
+              Seafood
+            </label>
+          </div>
+      </div>
+
+      <input type="submit" name="commit" value="Search" class="btn btn-primary btn-block mb-1" data-disable-with="Search" />
+
+      <a href="/dishes" class="btn btn-secondary btn-block mb-1">Clear filters</a>
+</form>
+    <a class="btn btn-secondary btn-block mb-1" data-toggle="collapse" href="#dishes_filters">
+      Show Filters
+    </a>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card">
+      <table class="table table-striped table-hover">
+        <tr>
+          <th>
+            The very best...
+          </th>
+
+          <th>
+            is at...
+          </th>
+
+          <th>
+
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38030">
+              Bagel
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="xxpP6lX5ZB3NCizfxTMWQwz4rEKRtFxHruioAuvsfHl8BJJGxdJTKAg1JH4gkzPAcO2+UH7MN9UAvclCsv52jA==">
+
+
+                <input type="hidden" name="dish_id" value="38030">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Breakfast
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38041">
+              Banana Split
+            </a>
+          </td>
+
+          <td>
+              <a href="/venues/39518">
+                Margie&#39;s Candies
+              </a>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Dessert
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38055">
+              Biscuits and Gravy
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="RAVoad4+TlT0kYoAGodFuj51tk85XPBtFhc+aLna23L/G7XFThV5YTGugqH/J2A5QmCkXdYkm/+4Ql8o4MjRhw==">
+
+
+                <input type="hidden" name="dish_id" value="38055">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Breakfast
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38045">
+              Bloody Mary
+            </a>
+          </td>
+
+          <td>
+              <a href="/venues/39514">
+                Handlebar
+              </a>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Drink
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38032">
+              Burger
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="bxiYiBZs+52yoDJ4MzkB4+u+b3+XrM+RiUSpMyyTXpzUBkUkhkfMqHefOtnWmSRgl6t9bXjUpAMnEchzdYFUaQ==">
+
+
+                <input type="hidden" name="dish_id" value="38032">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              American
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38036">
+              Charcuterie
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="OZbUw1R4kOawBzTyvi4gSh1JHR0fgkU7xMHxx/4EXa6CiAlvxFOn03U4PFNbjgXJYVwPD/D6LqlqlJCHpxZXWw==">
+
+
+                <input type="hidden" name="dish_id" value="38036">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              French
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38054">
+              Chicken Tikka Masala
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="pSOwDySef8gumHL4sTNHKAPAffeAYuJxb/2bbZSGkNQePW2jtLVI/eunellUk2Krf9Vv5W8aiePBqPotzZSaIQ==">
+
+
+                <input type="hidden" name="dish_id" value="38054">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Indian
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38031">
+              Chili
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="tbe5WUoGXver6gzDz2h0Jj6CmzBJxjaOA3NPxLa3pHgOqWT12i1pwm7VBGIqyFGlQpeJIqa+XRytJi6E76WujQ==">
+
+
+                <input type="hidden" name="dish_id" value="38031">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              American
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38050">
+              Creme Brulee
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="C3eZUi7Hc9IUOPlS3A2L/xWs2Pyl+Mk6RN9bH3hsNquwaUT+vuxE59EH8fM5ra58abnK7kqAoqjqijpfIX48Xg==">
+
+
+                <input type="hidden" name="dish_id" value="38050">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Dessert
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38044">
+              Fried Pickles
+            </a>
+          </td>
+
+          <td>
+              <a href="/venues/39514">
+                Handlebar
+              </a>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              American
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38035">
+              Fruit Bowl
+            </a>
+          </td>
+
+          <td>
+              <a href="/venues/39520">
+                Kanela Breakfast Club
+              </a>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Salad
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38052">
+              Gin and Tonic
+            </a>
+          </td>
+
+          <td>
+              <a href="/venues/39506">
+                Longman &amp; Eagle
+              </a>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Drink
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38034">
+              Gnocchi
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="vwwBzX30zDipDaAd+MKmd8zaYnN1QAaR9O9plQE8omoEEtxh7d/7DWwyqLwdYoP0sM9wYZo4bQNaugjVWC6onw==">
+
+
+                <input type="hidden" name="dish_id" value="38034">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Italian
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38039">
+              Grits
+            </a>
+          </td>
+
+          <td>
+              <a href="/venues/39524">
+                The Southern
+              </a>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Breakfast
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38049">
+              Lamb Chops
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="/Hg/o1+kgGgmG3kuxMAmzk8ukIn8PqnaSkkL6kyLO3ZHZuIPz4+3XeMkcY8hYANNMzuCmxNGwkjkHGqqFZkxgw==">
+
+
+                <input type="hidden" name="dish_id" value="38049">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Classic
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38033">
+              Michelada
+            </a>
+          </td>
+
+          <td>
+              <a href="/venues/39526">
+                Big Star
+              </a>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Drink
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38053">
+              Mussels
+            </a>
+          </td>
+
+          <td>
+              <a href="/venues/39505">
+                Lockdown Bar &amp; Grill
+              </a>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Seafood
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38048">
+              Negroni
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="WcqORj2w+pgy2mSHE81Fo3MBrwwF2cuSED7P5W/HMTvi1FPqrZvNrfflbCb2bWAgDxS9HuqhoAC+a66lNtU7zg==">
+
+
+                <input type="hidden" name="dish_id" value="38048">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Drink
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38043">
+              Old Fashioned
+            </a>
+          </td>
+
+          <td>
+              <a href="/venues/39515">
+                The Whistler
+              </a>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Drink
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38051">
+              Pancakes
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="vVyHv+1meaHfzGe2lCftb6AKyStCbO4cqHvdlQ6k4jEGQloTfU1OlBrzbxdxh8js3B/bOa0UhY4GLrzVV7boxA==">
+
+
+                <input type="hidden" name="dish_id" value="38051">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Breakfast
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38038">
+              Pot Pie
+            </a>
+          </td>
+
+          <td>
+              <a href="/venues/39523">
+                Pleasant House Bakery
+              </a>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Classic
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38040">
+              Ramen
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="T7veLvBTqlMcNOhgwHZJ0vz7G10UcAXN8qjabX9vmJr0pQOCYHidZtkL4MEl1mxRgO4JT/sIbl9c/bstJn2Sbw==">
+
+
+                <input type="hidden" name="dish_id" value="38040">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Japanese
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38046">
+              Spaghetti
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="gKXaVcArmYj5p9NaJXngxqFlNwJ07BsmFuqog8b1TlI7uwf5UACuvTyY2/vA2cVF3XAlEJuUcLS4v8nDn+dEpw==">
+
+
+                <input type="hidden" name="dish_id" value="38046">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Italian
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38037">
+              Tres Leches
+            </a>
+          </td>
+
+          <td>
+              <form action="/create_bookmark" class="form-inline" method="post">
+                <!-- Hidden input for authenticity token to protect from forgery -->
+                <input name="authenticity_token" type="hidden" value="aEYtPFwc7jJB9UqZk6fQ9yuWv7ZP90/aIKympsneCmHTWPCQzDfZB4TKQjh2B/V0V4OtpKCPJEiO+cfmkMwAlA==">
+
+
+                <input type="hidden" name="dish_id" value="38037">
+                <input type="hidden" name="user_id" value="5972">
+
+                <!-- Label and input for venue_id -->
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+
+                <select name="venue_id" id="venue_id" class="form-control form-control-sm mr-sm-1"><option value="">Choose a venue...</option><option value="39529">Au Cheval</option>
+<option value="39512">Balena</option>
+<option value="39528">Bavette&#39;s Bar &amp; Boeuf</option>
+<option value="39526">Big Star</option>
+<option value="39510">Billy Sunday</option>
+<option value="39509">Chicago Cut Steakhouse</option>
+<option value="39514">Handlebar</option>
+<option value="39520">Kanela Breakfast Club</option>
+<option value="39508">Little Goat</option>
+<option value="39505">Lockdown Bar &amp; Grill</option>
+<option value="39506">Longman &amp; Eagle</option>
+<option value="39518">Margie&#39;s Candies</option>
+<option value="39519">MAX&#39;s Wine Dive</option>
+<option value="39522">Mott St</option>
+<option value="39523">Pleasant House Bakery</option>
+<option value="39527">Plein Air Cafe &amp; Eatery</option>
+<option value="39504">Rangoli</option>
+<option value="39507">Ruth&#39;s Chris Steak House</option>
+<option value="39517">Shake Shack</option>
+<option value="39516">Skylark</option>
+<option value="39525">Slurping Turtle</option>
+<option value="39503">The Bagelers Coffeehouse</option>
+<option value="39521">The Publican</option>
+<option value="39524">The Southern</option>
+<option value="39515">The Whistler</option>
+<option value="39513">Umami Burger</option>
+<option value="39511">Unite Urban Grill</option></select>
+
+                <button class="btn btn-primary btn-sm">
+                  <i class="fa fa-heart"></i>
+                </button>
+              </form>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Dessert
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38042">
+              Veggie Burger
+            </a>
+          </td>
+
+          <td>
+              <a href="/venues/39517">
+                Shake Shack
+              </a>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              American
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <a href="/dishes/38047">
+              Watermelon Salad
+            </a>
+          </td>
+
+          <td>
+              <a href="/venues/39511">
+                Unite Urban Grill
+              </a>
+
+          </td>
+
+          <td class="text-right">
+            <span class="badge badge-primary">
+              Salad
+            </span>
+          </td>
+
+        </tr>
+      </table>
+
+      <div class="card-footer text-center">
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <a href="/venues/new" class="btn btn-block btn-success">
+      Add a new venue
+    </a>
+  </div>
+</div>
+
+  </div>
+</body>
+</html>

@@ -3,6 +3,7 @@
     Dishes
     <a href="/dishes/new" class="btn btn-lg btn-success">New Dish</a>
   </h1>
+
 </div><div class="row mb-1">
   <div class="col-md-12">
     <%= search_form_for @q, :class => "collapse", :id => "dishes_filters" do |f| %>
@@ -89,12 +90,15 @@
       <tr>
         <th>Name</th>
         <th>Cuisine</th>
+        <!--<th>Venues</th>-->
         <th>Actions</th>
       </tr>
 
       <% @dishes.each do |dish| %>
       <tr>
-        <td><%= dish.name %></td>
+        <td>
+          <a href="/dishes/<%= dish.id %>"> <%= dish.name %></a>
+        </td>
         <td>
           <% if dish.cuisine.present? %>
             <a href="/cuisines/<%= dish.cuisine.id %>">
@@ -106,6 +110,7 @@
           <a href="/dishes/<%= dish.id %>" class="btn btn-primary">Show</a>
           <a href="/dishes/<%= dish.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_dish/<%= dish.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+    <!--<a href="/venues/new" class="btn btn-success">New Venue</a>-->
         </td>
       </tr>
       <% end %>
