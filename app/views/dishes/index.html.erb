@@ -92,7 +92,7 @@
       <tr>
         <th>Name</th>
         <th>Cuisine</th>
-        <!--<th>Venues</th>-->
+
         <th>Venues</th>
         <th>Actions</th>
       </tr>
@@ -105,32 +105,37 @@
             </a>
           </td>
           <td>
+              <% bookmark = Bookmark.where(:user_id => current_user.id, :dish_id => dish.id).first %>
+              <% if bookmark.present? %>
+                <%= Venue.find(bookmark.venue_id).name %>
+              <% else %>
+                <form action="/create_bookmark" class="form-inline" method="post">
+
+                  <input type="hidden" name="dish_id" value="<%= dish.id %>">
+                  <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+                  <!-- Label and input for venue_id -->
+                  <label for="venue_id" class="control-label sr-only">
+                    Venue
+                  </label>
+                  <%= select_tag("venue_id", options_from_collection_for_select(Venue.all, :id, :name, @venues.try(:venue_id)),:include_blank => "Choose a venue...") %>
+                  <button class="btn btn-primary btn-sm">
+                    <i class="fa fa-heart"></i>
+                  </button>
+                </form>
+              <% end %>
+            </td>
+          <td>
             <% if dish.cuisine.present? %>
               <a href="/cuisines/<%= dish.cuisine.id %>">
                 <%= dish.cuisine.name %>
               </a>
 
             </td>
-            <td>
-              <form action="/create_bookmark" class="form-inline" method="post">
-               
 
 
-                <input type="hidden" name="dish_id" value="<%= dish.id %>">
-                <input type="hidden" name="user_id" value="<%= current_user.id %>">
-
-              <!-- Label and input for venue_id -->
-              <label for="venue_id" class="control-label sr-only">
-                Venue
-              </label>
-              <%= select_tag("venue_id", options_from_collection_for_select(Venue.all, :id, :name, @venues.try(:venue_id)),:include_blank => "Choose a venue...") %>
-              <button class="btn btn-primary btn-sm">
-                  <i class="fa fa-heart"></i>
-                </button>
-              </form>
-
-            </td>
             
+
           <% end %>
           <td>
             <a href="/dishes/<%= dish.id %>" class="btn btn-primary">Show</a>
