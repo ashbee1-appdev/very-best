@@ -17,29 +17,17 @@
         <%= f.text_field :name_cont, :class => "form-control", :placeholder => "Name contains" %>
       </div>
 
+      <% @cuisines = Cuisine.all %>
+      <label for="q_cuisine_id_eq_any">Cuisine</label>
+      <% @cuisines.each do|cuisine| %>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="<%= cuisine.id %>" />
+            <%= cuisine.name %>
+          </label>
+        </div>
+      <% end %>
 
-        
-       
-    
-      
-        <% @cuisines = Cuisine.all %>
-        <% @cuisines.each do|cuisine| %>
-         
-            
-             <%= f.check_box :cuisine_id, {:class => "form-control"}, "checked-value", "unchecked-value" %>
-            
-              <%= cuisine.id %>
-            
-          <% end %>
-      
-      
-
-      
-
-
-      
-
-          
       <script type="text/javascript">
         $(function () {
             $('#created_atgteqPicker').datetimepicker({
@@ -58,9 +46,6 @@
         });
       </script>
 
-      
-
-      
 
       <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
 
