@@ -7,7 +7,7 @@
             You loved the <%= @dish.name %> at...
 
             <div class="badge badge-primary float-right">
-              <%= Cuisine.find(@dish.id).name %>
+              <%= Cuisine.find(@dish.cuisine_id).name %>
             </div>
           </h4>
         </div>
@@ -23,7 +23,7 @@
               <div class="form-group ">
 
 
-                <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :name), :class => "form-control",:include_blank => "Choose a venue...") %>
+                <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all.order(:name), :id, :name), :class => "form-control",:include_blank => "Choose a venue...") %>
                 </div>
                 <button class="btn btn-primary btn">
                   <i class="fa fa-heart"></i>
