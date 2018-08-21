@@ -61,7 +61,7 @@
 
           </tr>
 
-          <% @dishes.each do |dish| %>
+          <% @dishes.order(:name).each do |dish| %>
             <tr>
               <td>
                 <a href="/dishes/<%= dish.id %>">
