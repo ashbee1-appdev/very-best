@@ -39,15 +39,15 @@
           Dishes you loved here
         </li>
         
-<% @venue.bookmarks.each do |bookmark| %>
+<% @venue.bookmarks.where(:user_id => current_user.id).order(:created_at).reverse.each do |bookmark| %>
           <li class="list-group-item">
             <p>
               <a href="/venues/<%= bookmark.venue_id %>">
-               <%= Dish.find(bookmark.venue_id).name %>
+               <%= Dish.find(bookmark.dish_id).name %>
               </a>
 
               <small class="float-right text-muted">
-                38 minutes ago
+                <%= time_ago_in_words(bookmark.created_at) %>
 
                 <a href="/bookmarks/<%= bookmark.id %>/edit">
                   <i class="fa fa-fw fa-edit"></i>
@@ -64,8 +64,8 @@
         <li class="list-group-item">
           <form action="/create_bookmark" class="form-inline float-left" method="post">
 
-            <input type="hidden" name="venue_id" value="43038">
-            <input type="hidden" name="user_id" value="6505">
+            <input type="hidden" name="venue_id" value="<%= @venue.id %>">
+            <input type="hidden" name="user_id" value="<%= current_user.id %>">
 
             <!-- Label and input for dish_id -->
             <div class="form-group mr-sm-1">
@@ -73,32 +73,8 @@
                 Dish
               </label>
 
-              <select name="dish_id" id="dish_id" class="form-control"><option value="41413">Bagel</option>
-<option value="41417">Gnocchi</option>
-<option value="41418">Fruit Bowl</option>
-<option value="41419">Charcuterie</option>
-<option value="41420">Tres Leches</option>
-<option value="41422">Grits</option>
-<option value="41423">Ramen</option>
-<option value="41424">Banana Split</option>
-<option value="41425">Veggie Burger</option>
-<option value="41414">Chili</option>
-<option value="41427">Fried Pickles</option>
-<option value="41428">Bloody Mary</option>
-<option value="41429">Spaghetti</option>
-<option value="41430">Watermelon Salad</option>
-<option value="41431">Negroni</option>
-<option value="41432">Lamb Chops</option>
-<option value="41433">Creme Brulee</option>
-<option value="41434">Pancakes</option>
-<option value="41435">Gin and Tonic</option>
-<option value="41436">Mussels</option>
-<option value="41437">Chicken Tikka Masala</option>
-<option value="41416">Michelada</option>
-<option value="41421">Pot Pie</option>
-<option value="41426">Old Fashioned</option>
-<option value="41415">Burger</option>
-<option value="41438">Biscuits and Gravy</option></select>
+<%= select_tag(:dish_id, options_from_collection_for_select(Dish.all.order(:name), :id, :name), :class => "form-control") %>
+              
             </div>
 
             <button class="btn btn-primary btn">
@@ -113,12 +89,13 @@
         <li class="list-group-item list-group-item-success">
           Popular dishes here
         </li>
-
+<% @venue.bookmarks.each do |bookmark| %>
           <li class="list-group-item">
-            <a href="/dishes/41416">
-              Michelada
+            <a href="/dishes/<%= bookmark.dish_id %>">
+             <%= Dish.find(bookmark.dish_id).name %>
             </a>
           </li>
+          <% end %>
       </ul>
 
       <div class="card-footer text-center">
