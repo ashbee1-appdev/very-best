@@ -61,8 +61,11 @@
 
           </tr>
 
+    
           <% @dishes.order(:name).each do |dish| %>
+          
             <tr>
+              
               <td>
                 <a href="/dishes/<%= dish.id %>">
                   <a href="/dishes/<%= dish.id %>"> <%= dish.name %></a>
@@ -72,6 +75,7 @@
                 <% bookmark = Bookmark.where(:user_id => current_user.id, :dish_id => dish.id).first %>
                 <% if bookmark.present? %>
                   <a href="/venues/<%= Venue.find(bookmark.venue_id).id %>"><%= Venue.find(bookmark.venue_id).name %></a>
+                  
                 <% else %>
                   <form action="/create_bookmark" class="form-inline" method="post">
 
@@ -80,10 +84,13 @@
 
                     <!-- Label and input for venue_id -->
 
-                    <%= select_tag("venue_id", options_from_collection_for_select(Venue.all, :id, :name, @venues.try(:venue_id)),:include_blank => "Choose a venue...") %>
+                    
+                     <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all.order(:name), :id, :name), :class => "form-control form-control-sm mr-sm-1" ,:include_blank => "Choose a venue...") %>
+                    
                     <button class="btn btn-primary btn-sm">
                       <i class="fa fa-heart"></i>
                     </button>
+                  
                   </form>
                 <% end %>
               </td>
@@ -97,7 +104,11 @@
                 </span>
               </td>
           </tr>
+          
             <% end %>
+           
+           
+           
         <% end %>
        </form>
 
@@ -113,7 +124,7 @@
         </div>
 </div>
     </div>
-  <div class="col-md-3">
+  <div class="col-md-2">
       <a href="/venues/new" class="btn btn-block btn-success">
         Add a new venue
       </a>
