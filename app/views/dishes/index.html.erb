@@ -73,7 +73,7 @@
                 <% if bookmark.present? %>
                   <a href="/venues/<%= Venue.find(bookmark.venue_id).id %>"><%= Venue.find(bookmark.venue_id).name %></a>
                 <% else %>
-                  <form action="/create_bookmark" class="form-inline" method="post">
+                  <form action="/create_bookmark" class="form-inline float-left" method="post">
 
                     <input type="hidden" name="dish_id" value="<%= dish.id %>">
                     <input type="hidden" name="user_id" value="<%= current_user.id %>">

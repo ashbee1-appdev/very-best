@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <div class="row mt-2 justify-content-md-center">
+<div class="row mt-2 justify-content-md-center">
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
@@ -11,37 +11,45 @@
             </div>
           </h4>
         </div>
+
         <ul class="list-group">
           <li class="list-group-item">
-            <form action="/create_bookmark" class="form-inline float-left " method="post">
+            <form action="/create_bookmark" class="form-inline float-left" method="post">
 
-              <!-- Label and input for dish_id -->
+
               <input type="hidden" name="dish_id" value="<%= @dish.id %>">
-
               <input type="hidden" name="user_id" value="<%= current_user.id %>">
 
-              <div class="form-group ">
 
+              <!-- Label and input for venue_id -->
+              <div class="form-group mr-sm-1">
+                <label for="venue_id" class="control-label sr-only">
+                  Venue
+                </label>
+                <%= select_tag("venue_id", options_from_collection_for_select(Venue.all, :id, :name, @venues.try(:venue_id)),:include_blank => "Choose a venue...") %>
+              </div>
 
-                <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :name), :class => "form-control",:include_blank => "Choose a venue...") %>
-                </div>
-                <button class="btn btn-primary btn">
-                  <i class="fa fa-heart"></i>
-                </button>
-              
+              <button class="btn btn-primary btn">
+                <i class="fa fa-heart"></i>
+              </button>
             </form>
             <small class="float-right text-muted">
               right now
             </small>
           </li>
 
-          <% bookmarks = Bookmark.where(:user_id => current_user.id, :dish_id => @dish.id).order(:created_at).reverse %>
-          <% bookmarks.each do |bookmark| %>
-            <li class="list-group-item">
-              <p>
-                <a href="/venues/<%= Venue.find(bookmark.venue_id).id %>">
+
+          <li class="list-group-item">
+
+            <% @bookmarks = Bookmark.where(:user_id => current_user.id, :dish_id => @dish.id).order("created_at").reverse %>
+            <p>
+              <% @bookmarks.each do |bookmark| %>
+
+                <a href="/venues/<%= bookmark.id %>">
                   <%= Venue.find(bookmark.venue_id).name %>
                 </a>
+
+
                 <small class="float-right text-muted">
                   <%= time_ago_in_words(bookmark.created_at) %>
 
@@ -55,18 +63,17 @@
                     <i class="fa fa-fw fa-trash-o"></i>
                   </a>
                 </small>
-              </p>
+               </p>
+            <% end %>
+           
+          </li>
 
-            </li>
-</ul>
-          <% end %>
+
           <div class="card-footer text-center">
             <a href="/dishes" class="btn btn-block btn-secondary">
               <i class="fa fa-chevron-left"></i>
             </a>
           </div>
-
         </div>
       </div>
     </div>
-  </div>
