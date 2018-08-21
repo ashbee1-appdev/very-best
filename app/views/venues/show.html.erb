@@ -89,14 +89,22 @@
         <li class="list-group-item list-group-item-success">
           Popular dishes here
         </li>
+        
 <% @venue.bookmarks.each do |bookmark| %>
-          <li class="list-group-item">
-            <a href="/dishes/<%= bookmark.dish_id %>">
-             <%= Dish.find(bookmark.dish_id).name %>
-            </a>
-          </li>
-          <% end %>
-      </ul>
+        <li class="list-group-item">
+          <a href="/dishes/<%= bookmark.dish_id %>">
+            <%= Dish.find(bookmark.dish_id).name %>
+          </a>
+          
+            
+          
+        </li>
+      <% end %>
+        
+        
+        
+        
+
 
       <div class="card-footer text-center">
         <a href="/venues" class="btn btn-block btn-secondary">
