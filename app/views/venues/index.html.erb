@@ -1,93 +1,89 @@
+<div class="container mt-4">
+  <div class="row mt-2 mb-1">
+    <div class="col-md-3">
+      <%= search_form_for @q, :class => "collapse", :id => "venues_filters" do |f| %>
+          <p class="lead">Narrow results:</p>
 
-
-  <div class="container mt-4">
-
-
-    <div class="row mt-2 mb-1">
-  <div class="col-md-3">
-    <form class="collapse" id="venues_filters" action="/venues" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-    <p class="lead">Narrow results:</p>
-
-    <div class="form-group">
-      <label for="q_name_cont">Name contains</label>
-      <input class="form-control" placeholder="Name contains" type="text" name="q[name_cont]" id="q_name_cont" />
-    </div>
-
-    <div class="form-group">
-      <label for="q_bookmarks_notes_or_specialties_name_cont">Bookmarked dish name contains</label>
-      <input class="form-control" placeholder="Bookmarked dish name contains" type="text" name="q[bookmarks_notes_or_specialties_name_cont]" id="q_bookmarks_notes_or_specialties_name_cont" />
-    </div>
-
-    <div class="form-group">
-      <label for="q_neighborhood_name_cont">Neighborhood name contains</label>
-      <input class="form-control" placeholder="Neighborhood name contains" type="text" name="q[neighborhood_name_cont]" id="q_neighborhood_name_cont" />
-    </div>
-
-    <input type="submit" name="commit" value="Search" class="btn btn-primary btn-block mb-1" data-disable-with="Search" />
-
-    <a href="/venues" class="btn btn-secondary btn-block mb-1">Clear filters</a>
-</form>    <a class="btn btn-secondary btn-block mb-1" data-toggle="collapse" href="#venues_filters">
-      Show Filters
-    </a>
-  </div>
-
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title">
-          Places you've bookmarked
-        </h4>
+          <div class="form-group">
+        <%= f.label :name_cont, "Name contains" %>
+        <%= f.text_field :name_cont, :class => "form-control", :placeholder => "Name contains" %>
       </div>
 
-      <div class="card-body">
-        <div id="location_map" style="height: 360px;"></div>
-      </div>
-       <ul class="list-group list-group-flush">
-            <% @venues.order(:name).each do |venue| %>
+       <div class="form-group">
+          <%= f.label :specialties_name_cont, "Bookmarked dish name contains" %>
+          <%= f.text_field :specialties_name_cont, :class => "form-control", :placeholder => "Bookmarked dish name contains" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :neighborhood_name_cont, "Neighborhood name contains" %>
+          <%= f.text_field :neighborhood_name_cont, :class => "form-control", :placeholder => "Neighborhood name contains" %>
+        </div>
+
+        <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+        <a href="/venues" class="btn btn-secondary btn-block mb-1">Clear filters</a>
+        <% end %>
+        <a class="btn btn-secondary btn-block mb-1" data-toggle="collapse" href="#venues_filters">
+          Show Filters
+        </a>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">
+            Places you've bookmarked
+          </h4>
+        </div>
+
+        <div class="card-body">
+          <div id="location_map" style="height: 360px;"></div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <% @venues.order(:name).each do |venue| %>
             <% bookmark = Bookmark.where(:user_id => current_user.id, :venue_id => venue.id) %>
             <% if bookmark.present? %>
               <li class="list-group-item">
 
                 <a href="/venues/<%= venue.id %>"><%= venue.name %></a>
-                
-          
-              <small class="text-muted float-right">
-                <% if venue.neighborhood.present? %>
+
+
+                <small class="text-muted float-right">
+                  <% if venue.neighborhood.present? %>
                     <%= venue.neighborhood.name %>, <%= venue.neighborhood.city %>
-                <% end %>   
-              </small>
+                  <% end %>
+                </small>
 
-            <% else %>
+              <% else %>
+              <% end %>
             <% end %>
-            <% end %>
-        </li>
-      </ul>
+          </li>
+        </ul>
 
 
-      <div class="card-footer text-center">
-        
+        <div class="card-footer text-center">
+
+        </div>
       </div>
+    </div>
+
+    <div class="col-md-3">
+      <a href="/venues/new" class="btn btn-block btn-success">
+        Add a new venue
+      </a>
     </div>
   </div>
 
-  <div class="col-md-3">
-    <a href="/venues/new" class="btn btn-block btn-success">
-      Add a new venue
-    </a>
-  </div>
+     <script src="//maps.google.com/maps/api/js?v=3.24&key=AIzaSyCOTPWiuvyyo6sKoIBzKA4-1ol-vTOIOlM"></script>
+    <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+    <script>
+      handler = Gmaps.build('Google');
+      handler.buildMap({ provider: {}, internal: {id: 'location_map'}}, function(){
+        markers = handler.addMarkers(<%= raw @location_hash.to_json %> );
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    </script>
+    
 </div>
 
-<script src="//maps.google.com/maps/api/js?v=3.24&key=AIzaSyCOTPWiuvyyo6sKoIBzKA4-1ol-vTOIOlM"></script>
-<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
-<script>
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'location_map'}}, function(){
-    markers = handler.addMarkers([{"lat":41.9173705,"lng":-87.6876492,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42976'\u003eMargie's Candies\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e1960 N Western Ave, Chicago, IL 60647, USA\u003c/small\u003e"},{"lat":41.8963462,"lng":-87.6644513,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42969'\u003eUnite Urban Grill\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e1450 W Chicago Ave, Chicago, IL 60642, USA\u003c/small\u003e"},{"lat":41.9253678,"lng":-87.7010381,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42973'\u003eThe Whistler\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e2421 N Milwaukee Ave, Chicago, IL 60647, USA\u003c/small\u003e"},{"lat":41.8846827,"lng":-87.6484401,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42966'\u003eLittle Goat\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e820 W Randolph St, Chicago, IL 60607, USA\u003c/small\u003e"},{"lat":41.8381047,"lng":-87.6512729,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42981'\u003ePleasant House Bakery\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e964 W 31st St, Chicago, IL 60608, USA\u003c/small\u003e"},{"lat":41.9001693,"lng":-87.6873022,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42963'\u003eLockdown Bar \u0026 Grill\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e1024 N Western Ave, Chicago, IL 60622, USA\u003c/small\u003e"},{"lat":41.9106889,"lng":-87.6742363,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42982'\u003eThe Southern\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e1840 W North Ave, Chicago, IL 60622, USA\u003c/small\u003e"},{"lat":41.8926161,"lng":-87.6255681,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42975'\u003eShake Shack\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e66 E Ohio St, Chicago, IL 60611, USA\u003c/small\u003e"},{"lat":41.9277037,"lng":-87.7064828,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42968'\u003eBilly Sunday\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e3143 W Logan Blvd, Chicago, IL 60647, USA\u003c/small\u003e"},{"lat":41.9073355,"lng":-87.6731963,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42978'\u003eKanela Breakfast Club\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e1408 N Milwaukee Ave, Chicago, IL 60622, USA\u003c/small\u003e"},{"lat":41.9300584,"lng":-87.7070432,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42964'\u003eLongman \u0026 Eagle\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e2657 N Kedzie Ave, Chicago, IL 60647, USA\u003c/small\u003e"},{"lat":41.9091585,"lng":-87.6771252,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42984'\u003eBig Star\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e1531 N Damen Ave, Chicago, IL 60622, USA\u003c/small\u003e"},{"lat":41.8846582,"lng":-87.6476668,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42987'\u003eAu Cheval\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e800 W Randolph St, Chicago, IL 60607, USA\u003c/small\u003e"},{"lat":41.9100978,"lng":-87.6852901,"infowindow":"\u003ch5\u003e\u003ca href='/venues/42972'\u003eHandlebar\u003c/a\u003e\u003c/h5\u003e\u003csmall\u003e2311 W North Ave, Chicago, IL 60647, USA\u003c/small\u003e"}]);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-  });
-</script>
-
-  </div>
-</body>
-</html>
