@@ -13,7 +13,7 @@
 
           <% @cuisines = Cuisine.all %>
           <label for="q_cuisine_id_eq_any">Cuisine</label>
-          <% @cuisines.each do|cuisine| %>
+          <% @cuisines.order(:name).each do|cuisine| %>
             <div class="checkbox">
               <label>
                 <input type="checkbox" name="q[cuisine_id_eq_any][]" id="q_cuisine_id_eq_any_" value="<%= cuisine.id %>" />
