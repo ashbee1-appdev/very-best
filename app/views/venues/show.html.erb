@@ -115,9 +115,9 @@
   handler.buildMap({ provider: {}, internal: {id: 'location_map'}}, function(){
     markers = handler.addMarkers([
       {
-        "lat": 41.9091585,
-        "lng": -87.6771252,
-        "infowindow": "<h5>2018-08-21 04:51:06 UTC</h5><small>1531 N Damen Ave, Chicago, IL 60622, USA</small>"
+        "lat": <%= @venue.address_latitude %>,
+        "lng": <%= @venue.address_longitude %>,
+        "infowindow": "<h5><%= @venue.created_at %></h5><small><%= @venue.address_formatted_address %></small>"
       }
     ]);
     handler.bounds.extendWith(markers);
